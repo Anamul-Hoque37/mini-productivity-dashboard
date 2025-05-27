@@ -20,9 +20,9 @@ const Navbar = () => {
         <div>
             <div className="navbar bg-fuchsia-100 dark:bg-slate-900 p-0 px-3">
                 <div className="flex-1">
-                    <a className="btn btn-ghost text-xl text-slate-900">Task Management</a>
+                    <a className="btn btn-ghost text-xl text-slate-900">Mini Productivity Dashboard</a>
                 </div>
-                <div className='gap-2'>
+                <div className='flex gap-2'>
                     <div className="flex-none border rounded-lg py-1 px-2 text-center items-center bg-slate-50">
                         <label className="swap swap-rotate">
                             {/* This checkbox toggles the dark mode */}
