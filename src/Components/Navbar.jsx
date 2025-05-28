@@ -23,12 +23,12 @@ const Navbar = () => {
                     <a className="btn btn-ghost text-xl text-slate-900">Mini Productivity Dashboard</a>
                 </div>
                 <div className='flex gap-2'>
-                    <div className="flex-none border rounded-lg py-1 px-2 text-center items-center bg-slate-50">
+                    <div className="flex-none border rounded-lg pt-3 px-2 text-center items-center bg-slate-50">
                         <label className="swap swap-rotate">
                             {/* This checkbox toggles the dark mode */}
                             <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
                             {/* Light mode and Dark Mode icon */}
-                            <div className='text-3xl items-center justify-center text-center'>
+                            <div className='text-3xl items-center justify-center text-center text-black'>
                                 {isDarkMode ? <CiLight /> : <MdDarkMode />}
                             </div>
                         </label>

@@ -1,12 +1,73 @@
-# React + Vite
+# 🧠 Mini Productivity Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based productivity tool where users can manage daily tasks, set goals, and stay motivated with quotes — built with **React.js**, **Node.js**, **Express**, and **MongoDB**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- ✅ User Registration & Login (JWT Auth)
+- ✅ Daily Task Management (Add, Edit, Delete, Mark Complete)
+- ✅ Weekly/Monthly Goals Section
+- ✅ Motivational Quotes (via API)
+- ✅ Light/Dark Mode Toggle 🌙☀️
+- ✅ Drag-and-Drop Task Reordering (Bonus)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧰 Tech Stack
+
+| Frontend        | Backend          | Database       |
+|----------------|------------------|----------------|
+| React.js        | Node.js + Express | MongoDB + Mongoose |
+| Tailwind CSS   | JWT Auth         | MongoDB Atlas |
+| React DnD      | bcrypt.js        |                |
+| React Router   | cors, dotenv     |                |
+
+---
+
+
+## ⚙️ Setup Instructions Backend
+
+### 1. 🧬 Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/mini-productivity-dashboard.git
+cd mini-productivity-dashboard
+
+### 2. 🔧 Backend Setup
+
+cd server
+npm install
+
+### 3. 🔐 Create a .env file inside the /server folder:
+
+PORT=5000
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/your-db
+JWT_SECRET=your_jwt_secret
+
+### 4. ▶️ Start the backend server:
+nodemon index.js
+
+---
+
+## ⚙️ Setup Instructions Frontend
+
+### 1. 🧬 Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/mini-productivity-dashboard.git
+cd mini-productivity-dashboard
+
+### 🎨 Frontend Setup
+
+npm install
+
+### ▶️ Start the frontend:
+
+npm run dev
+
+## 🌐 Live Demo
+### ✨ Coming Soon!
+Frontend (Vercel) → [your-link.vercel.app]
+Backend (Render) → [https://mini-productivity-dashboard-server.onrender.com]

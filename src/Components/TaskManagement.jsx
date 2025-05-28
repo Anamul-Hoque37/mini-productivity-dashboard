@@ -4,6 +4,8 @@ import useAxiosSecure from '../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import { useQuery } from '@tanstack/react-query';
 import auth from '../../firebase.config';
+import MotivationalQuote from '../Components/MotivationalQuote';
+import Goals from '../Components/Goals';
 
 const initialTasks = {
     'To-Do': [],
@@ -25,12 +27,12 @@ const TaskManagement = () => {
         queryFn: async () => {
             const res = await axiosSecure.get(`/tasks/${email}`);
             console.log('API Response:', res.data); // Debugging
-    
+
             // Ensure the response has the expected structure
             if (!res.data || typeof res.data !== 'object') {
                 throw new Error('Invalid response format');
             }
-    
+
             return {
                 'To-Do': res.data['To-Do']?.map(task => ({ ...task, id: task._id })) || [],
                 'In Progress': res.data['In Progress']?.map(task => ({ ...task, id: task._id })) || [],
@@ -209,7 +211,7 @@ const TaskManagement = () => {
 
     return (
         <div className="p-4 max-w-4xl min-h-screen mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Task Management</h2>
+            <h2 className="text-2xl font-bold mb-4">Daily Task List</h2>
             <div className="mb-4">
                 <input
                     type="text"
@@ -320,6 +322,19 @@ const TaskManagement = () => {
                     ))}
                 </div>
             </DragDropContext>
+            
+            <div className="bg-gray-100 mt-4 dark:bg-gray-800 p-4">
+                {/* Other sections like Navbar, Tasks */}
+                <div className="grid md:grid-cols-1 gap-4">
+                    {/* Left side: Tasks or other widgets */}
+                    {/* Right side: Goals */}
+                    <Goals userEmail={user.email} />
+                </div>
+            </div>
+            <div className="bg-gray-100 mt-4 dark:bg-gray-800 p-4">
+                {/* Other sections like tasks and goals */}
+                <MotivationalQuote />
+            </div>
         </div>
     );
 };
