@@ -37,7 +37,7 @@ const SocialLogin = () => {
             .catch(error => {
                 Swal.fire({
                     title: 'Error',
-                    text: 'Cannot Login', error,
+                    text: `Cannot Login: ${error.message}`,
                     icon: 'error',
                     footer: 'Please check your Google account.'
                 });
