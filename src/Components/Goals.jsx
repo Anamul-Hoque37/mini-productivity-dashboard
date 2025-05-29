@@ -10,7 +10,7 @@ const Goals = ({ userEmail }) => {
     // Fetch goals
     useEffect(() => {
         if (userEmail) {
-            axios.get(`http://localhost:5000/goals/${userEmail}`)
+            axios.get(`https://mini-productivity-dashboard-server-2.onrender.com/goals/${userEmail}`)
                 .then(res => setGoals(res.data))
                 .catch(err => console.error(err));
         }
@@ -24,20 +24,20 @@ const Goals = ({ userEmail }) => {
             type: goalType,
             completed: false,
         };
-        const res = await axios.post('http://localhost:5000/goals', goal);
+        const res = await axios.post('https://mini-productivity-dashboard-server-2.onrender.com/goals', goal);
         setGoals([...goals, res.data]);
         setNewGoal('');
     };
 
     const toggleGoalComplete = async (id, completed) => {
-        await axios.patch(`http://localhost:5000/goals/${id}`, { completed: !completed });
+        await axios.patch(`https://mini-productivity-dashboard-server-2.onrender.com/goals/${id}`, { completed: !completed });
         setGoals(goals.map(goal =>
             goal._id === id ? { ...goal, completed: !completed } : goal
         ));
     };
 
     const handleDelete = async (id) => {
-        await axios.delete(`http://localhost:5000/goals/${id}`);
+        await axios.delete(`https://mini-productivity-dashboard-server-2.onrender.com/goals/${id}`);
         setGoals(goals.filter(goal => goal._id !== id));
     };
 
